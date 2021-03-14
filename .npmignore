@@ -6,3 +6,4 @@ style.css
 .DS_Store
 *.local
 .idea
+Makefile
