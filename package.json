@@ -1,6 +1,6 @@
 {
   "name": "@swith/adaptable",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Responsive based on elements width",
   "files": [
     "dist"
