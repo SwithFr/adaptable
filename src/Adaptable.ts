@@ -7,8 +7,37 @@ export default class Adaptable {
     constructor() {
         this.selector = '[data-adaptable]';
         this.adaptableElements = this.getAllAdaptableElements();
-        this.adapt();
+    }
 
+    /**
+     * Returns element current width
+     */
+    private static getWidth(ae: HTMLElement): number {
+        return ae.getBoundingClientRect().width;
+    }
+
+    /**
+     * Remove all ae-class
+     */
+    private static clearClasses(ae: HTMLElement): void {
+        ae.className = ae.className.replace(/ae-\d+\s?(?!\w+)/gm, '');
+    }
+
+    /**
+     * Remove all ae-class
+     */
+    private static addClass(ae: HTMLElement, breakpoint: number): void {
+        ae.classList.add('ae-' + breakpoint);
+    }
+
+    /**
+     * Does element already has class for breakpoint
+     */
+    private static hasClassForBreakpoint(ae: HTMLElement, breakpoint: number): boolean {
+        return ae.classList.contains('ae-' + breakpoint);
+    }
+
+    observe(): void {
         window.addEventListener('resize', () => {
             this.getAllAdaptableElements();
             this.adapt();
@@ -16,21 +45,21 @@ export default class Adaptable {
     }
 
     /**
-     * Get all adaptable elements on page
-     */
-    private getAllAdaptableElements():  HTMLElement[] {
-        return Array.from(document.querySelectorAll(this.selector));
-    }
-
-    /**
      * Add ae-class to elements based on their current width
      */
-    private adapt(): void {
+    adapt(): void {
         if (this.adaptableElements.length) {
             this.adaptableElements.forEach((ae) => {
                 this.addClassIfNeeded(ae);
             });
         }
+    }
+
+    /**
+     * Get all adaptable elements on page
+     */
+    private getAllAdaptableElements(): HTMLElement[] {
+        return Array.from(document.querySelectorAll(this.selector));
     }
 
     /**
@@ -40,13 +69,6 @@ export default class Adaptable {
         return ae.dataset.adaptable.split('-').map(bp => {
             return parseInt(bp, 10);
         }).sort().reverse();
-    }
-
-    /**
-     * Returns element current width
-     */
-    private static getWidth(ae: HTMLElement): number {
-        return ae.getBoundingClientRect().width;
     }
 
     /**
@@ -63,34 +85,13 @@ export default class Adaptable {
 
         for (let i = 0; i < breakpoints.length; i++) {
             const w = breakpoints[i];
-            const w1 = breakpoints.hasOwnProperty(i+1) ? breakpoints[i+1] : 0;
+            const w1 = breakpoints.hasOwnProperty(i + 1) ? breakpoints[i + 1] : 0;
 
             if (width <= w && width > w1 && !Adaptable.hasClassForBreakpoint(ae, w)) {
                 Adaptable.clearClasses(ae);
                 Adaptable.addClass(ae, w);
             }
         }
-    }
-
-    /**
-     * Remove all ae-class
-     */
-    private static clearClasses(ae: HTMLElement): void {
-        ae.className = ae.className.replace(/ae-\d+\s?(?!\w+)/gm, '');
-    }
-
-    /**
-     * Remove all ae-class
-     */
-    private static addClass(ae: HTMLElement, breakpoint: number): void {
-        ae.classList.add('ae-'+breakpoint);
-    }
-
-    /**
-     * Does element already has class for breakpoint
-     */
-    private static hasClassForBreakpoint(ae: HTMLElement, breakpoint: number): boolean {
-        return ae.classList.contains('ae-'+breakpoint);
     }
 
 }

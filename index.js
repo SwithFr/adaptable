@@ -2,4 +2,6 @@ import './style.css';
 
 import Adaptable from './src/Adaptable';
 
-new Adaptable();
+const adaptor = new Adaptable();
+adaptor.adapt();
+adaptor.observe();
