@@ -1,6 +1,6 @@
 {
   "name": "@swith/adaptable",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Responsive based on elements width",
   "main": "dist/adaptable.umd.js",
   "module": "dist/adaptable.es.js",
@@ -13,7 +13,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "prepublishOnly": "@build"
+    "prepublishOnly": "yarn build"
   },
   "devDependencies": {
     "vite": "^2.0.5"
