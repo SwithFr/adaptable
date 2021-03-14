@@ -6,6 +6,10 @@ Simple library to add responsive classes based on elements widths instead of win
 
 `npm install @swith/adaptable --save`
 
+or 
+
+`yarn add @swith/adaptable`
+
 # Usage
 
 First, define some breakpoints for your elements
