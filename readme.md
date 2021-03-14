@@ -35,7 +35,8 @@ Finally, don't forget to import Adaptable and init it;
 ```javascript
 import Adaptable from 'swithfr/adaptable';
 
-new Adaptable();
+Adaptable.adapt();
+Adaptable.observe();
 ```
 
 And that's it ! Adaptable will automatically add an `ae-{breakpointWidth}` class on your element if it's width is smaller than the breakpoint.
