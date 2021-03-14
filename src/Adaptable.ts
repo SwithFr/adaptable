@@ -39,7 +39,6 @@ export default class Adaptable {
 
     observe(): void {
         window.addEventListener('resize', () => {
-            this.getAllAdaptableElements();
             this.adapt();
         });
     }
@@ -48,6 +47,8 @@ export default class Adaptable {
      * Add ae-class to elements based on their current width
      */
     adapt(): void {
+        this.getAllAdaptableElements();
+
         if (this.adaptableElements.length) {
             this.adaptableElements.forEach((ae) => {
                 this.addClassIfNeeded(ae);
