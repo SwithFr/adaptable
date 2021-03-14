@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Responsive based on elements width",
   "entryPoint": "src/index.js",
+  "repository": "https://github.com/SwithFr/adaptable",
   "scripts": {
     "dev": "vite",
     "build": "vite build"
