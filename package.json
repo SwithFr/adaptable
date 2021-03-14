@@ -1,14 +1,23 @@
 {
   "name": "@swith/adaptable",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Responsive based on elements width",
-  "entryPoint": "src/index.js",
-  "repository": "https://github.com/SwithFr/adaptable",
+  "main": "src/index.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build"
   },
   "devDependencies": {
     "vite": "^2.0.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SwithFr/adaptable.git"
+  },
+  "author": "SwithFr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SwithFr/adaptable/issues"
+  },
+  "homepage": "https://github.com/SwithFr/adaptable#readme"
 }
