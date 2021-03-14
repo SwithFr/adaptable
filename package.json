@@ -1,6 +1,7 @@
 {
   "name": "adaptable",
   "version": "0.0.1",
+  "description": "Responsive based on elements width",
   "entryPoint": "main.js",
   "scripts": {
     "dev": "vite",
