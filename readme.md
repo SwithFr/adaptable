@@ -18,12 +18,12 @@ Then, add css classes to add some styles when your elements are smaller than the
 
 ```css
 /** first block */
-.my-block .ae-850 { background-color: red; }
-.my-block .ae-600 { background-color: blue; }
-.my-block .ae-350 { background-color: green; }
+.my-block.ae-850 { background-color: red; }
+.my-block.ae-600 { background-color: blue; }
+.my-block.ae-350 { background-color: green; }
 /** second block */
-.my-second-block .ae-500 { background-color: yellow; }
-.my-second-block .ae-200 { background-color: orange; }
+.my-second-block.ae-500 { background-color: yellow; }
+.my-second-block.ae-200 { background-color: orange; }
 ```
 
 Finally, don't forget to import Adaptable and init it;

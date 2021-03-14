@@ -1,0 +1,8 @@
+node_modules
+favicon.svg
+index.html
+index.js
+style.css
+.DS_Store
+*.local
+.idea

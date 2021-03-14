@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
-    "target": "ES6"
+    "target": "ES6",
+    "outDir": "dist",
+    "declaration": true,
+    "types": ["vite/client"]
   }
 }

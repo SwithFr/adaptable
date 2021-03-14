@@ -1,0 +1,13 @@
+/** default */
+.my-block, .my-second-block {
+    height: 250px;
+    background-color: aqua;
+    margin-bottom: 1em;
+}
+/** first block */
+.my-block.ae-850 { background-color: red; }
+.my-block.ae-600 { background-color: blue; }
+.my-block.ae-350 { background-color: green; }
+/** second block */
+.my-second-block.ae-500 { background-color: yellow; }
+.my-second-block.ae-200 { background-color: orange; }

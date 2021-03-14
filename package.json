@@ -2,14 +2,25 @@
   "name": "@swith/adaptable",
   "version": "1.0.0",
   "description": "Responsive based on elements width",
-  "main": "src/index.js",
+  "main": "dist/adaptable.umd.js",
+  "module": "dist/adaptable.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/adaptable.es.js",
+      "require": "./dist/adaptable.umd.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "prepublishOnly": "@build"
   },
   "devDependencies": {
     "vite": "^2.0.5"
   },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SwithFr/adaptable.git"
