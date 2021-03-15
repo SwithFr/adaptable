@@ -86,13 +86,19 @@ export default class Adaptable {
 
         for (let i = 0; i < breakpoints.length; i++) {
             const w = breakpoints[i];
-            const w1 = breakpoints.hasOwnProperty(i + 1) ? breakpoints[i + 1] : 0;
 
-            if (width <= w && width > w1 && !Adaptable.hasClassForBreakpoint(ae, w)) {
-                Adaptable.clearClasses(ae);
+            if (width <= w) {
                 Adaptable.addClass(ae, w);
+            } else {
+                Adaptable.removeClasses(ae, w);
             }
         }
     }
 
+    /**
+     * Remove unnecessary ae-class
+     */
+    private static removeClasses(ae: HTMLElement, breakpoint: number): void {
+        ae.classList.remove('ae-' + breakpoint);
+    }
 }

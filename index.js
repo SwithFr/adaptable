@@ -1,7 +1,6 @@
 import './style.css';
 
-import Adaptable from './src/Adaptable';
+import Adaptable from './dist/adaptable.es';
 
-const adaptor = new Adaptable();
-adaptor.adapt();
-adaptor.observe();
+Adaptable.adapt();
+Adaptable.observe();
